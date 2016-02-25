@@ -2,8 +2,9 @@
 
 Make a table using the `donations_over_5K.json`. The data contains all campaign donations over $5,000 filed with the Missouri Ethics Commission. 
 
-* Make a table using the data in the json file using:
+* To create your table, you'll use the following:
 	* A for loop
+	* jQuery's append method
 	* HTML table markup ([Reference here](http://www.w3schools.com/html/html_tables.asp))
 	* Bootstrap styles and style rules covered in the [ProPublica Data Style Guide](https://github.com/propublica/guides/blob/master/news-apps.md) reading and the [Remove to Improve Gifs](https://github.com/propublica/guides/blob/master/news-apps.md) (specifically, the table example).
 
