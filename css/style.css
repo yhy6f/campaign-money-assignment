@@ -4,3 +4,7 @@
 .chart {
   height: 500px;
 }
+
+td.amount, th.amount {
+	text-align: right;
+}
