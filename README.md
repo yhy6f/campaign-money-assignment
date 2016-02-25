@@ -1,5 +1,7 @@
 ### Assignment:
 
+Make a table using the `donations_over_5K.json`. The data contains all campaign donations over $5,000 filed with the Missouri Ethics Commission. 
+
 * Make a table using the data in the json file using:
 	* A for loop
 	* HTML table markup ([Reference here](http://www.w3schools.com/html/html_tables.asp))
