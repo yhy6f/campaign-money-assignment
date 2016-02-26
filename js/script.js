@@ -1,6 +1,7 @@
 
 // Assignment:
-// Create a list of all of the donations to Kurt Schaefer's Campain
+// Create a list of all of the donations to Kurt Schaefer's Campaign
+// (CITIZENS TO ELECT KURT SCHAEFER ATTORNEY GENERAL)
 
 
 $(document).ready(function() {
@@ -9,18 +10,9 @@ $(document).ready(function() {
 	// When the page is loaded,
 	// call the loadData() function.
 
-	loadData();
-
 });
 
-
-
-
 function loadData() {
-	
-	$.getJSON("js/donations_over_5K.json", function(data) {
-		writeTable(data);
-	});
 
 	// 2.
 	// Write an AJAX call here to load your data.
@@ -28,20 +20,7 @@ function loadData() {
 }
 
 
-
 function writeTable(data) {
-
-	$.each(data, function(i, item) {
-		if (item["Committee"] === "CITIZENS TO ELECT KURT SCHAEFER ATTORNEY GENERAL") {
-			$("table.donations tbody").append(
-				"<tr>"+
-					"<td>"+item["Contribution Date"]+"</td>"+
-	                "<td>"+item["Contribution Information"]+"</td>"+
-	                "<td class='amount'>"+item["Amount"]+"</td>"+
-                "</tr>"
-			);
-		}
-	});
 
 	// 3.
 	// Make a list of every donation made to "CITIZENS TO ELECT KURT SCHAEFER ATTORNEY GENERAL"
