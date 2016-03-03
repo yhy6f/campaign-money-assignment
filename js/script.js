@@ -1,27 +1,24 @@
 
 // Assignment:
 // Create a list of all of the donations to Kurt Schaefer's Campaign
-// (CITIZENS TO ELECT KURT SCHAEFER ATTORNEY GENERAL)
+// (CITIZENS TO ELECT KURT SCHAEFER ATTORNEY GENERAL)  
 
 
 $(document).ready(function() {
-
-	// 1.
-	// When the page is loaded,
-	// call the loadData() function.
-
+	console.log("Init.");
+	loadData();
 });
 
 function loadData() {
 
-	// 2.
-	// Write an AJAX call here to load your data.
-	// Then PASS the data to writeTable();
+	console.log("loadData()");
+
+	$.getJSON("js/donations_over_5k.json", function(data) {
+		//console.log(data);
+		writeTable(data); 
+
+	});
 }
-
-
-function writeTable(data) {
-
 	// 3.
 	// Make a list of every donation made to "CITIZENS TO ELECT KURT SCHAEFER ATTORNEY GENERAL"
 	// Do this by looping through the data and writing a new table row (<tr></tr>) for every donation.
@@ -29,5 +26,24 @@ function writeTable(data) {
 	// - Contribution Date
 	// - Contributon Information
 	// - Amount
-}
 
+function writeTable(data) {
+
+		console.log("call from loopThroughData");
+	    console.log(data.length);
+
+	    for (i=0; i<data.length; i++) {
+
+	    	//console.log(data[i]);
+
+		    var Date = data[i]["Contribution Date"];
+		    var Info= data[i]["Contribution Information"];
+		    var Amount = data[i]["Amount"];
+		    var Committee = data[i]["Committee"];
+	
+			console.log(Date + ' - ' + Info);
+
+		    if ( Committee === "CITIZENS TO ELECT KURT SCHAEFER ATTORNEY GENERAL")
+			$("#myTable tbody").append('<tr><td>' + Date + '</td><td>' + Info + '</td><td>' + Amount + '</td></tr>');
+		}
+}
